@@ -1,0 +1,22 @@
+{
+  "name": "candyforth",
+  "version": "0.0.1",
+  "description": "Toy compiler for a forth-like language, targeting WebAssembly",
+  "main": "./build/index.js",
+  "scripts": {
+    "start": "node --enable-source-maps ./build/index.js",
+    "poststart": "wat2wasm ./cforth/output.wat -o ./cforth/output.wasm",
+    "build": "tsc",
+    "test": "test",
+    "go": "npm run build && npm start && node run-wasm.js ./cforth/output.wasm"
+  },
+  "author": "hannahscript@github",
+  "license": "WTFPL",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "wat2wasm": "^3.0.0"
+  }
+}

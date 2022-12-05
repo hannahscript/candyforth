@@ -1,0 +1,2 @@
+: main 0 begin dup fib printf32 1 + dup 10 = until;
+: fib dup 2 < if pop 1 else dup 1 - fib swap 2 - fib + then;
